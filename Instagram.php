@@ -24,6 +24,12 @@ class Instagram{
 	*/
 	function __construct($token){
 		
+		//curl is required
+		if(!function_exists('curl_version'))
+		{
+			die("The CURL extension is required ");
+		}
+		
 		if(is_null($token)){
 			die('Error: no Instagram user auth token passed to constructor');
 		}
